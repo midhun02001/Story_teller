@@ -51,14 +51,5 @@ def main():
         story_text_area = st.text_area("Generated Story:", st.session_state.generated_story, height=400, key="story_content")
 
         # Button to copy story to clipboard
-        if st.button(st.session_state.get('copy_status', "Copy Story to Clipboard")):
-            try:
-                # Use pyperclip to copy the text to the clipboard
-                pyperclip.copy(st.session_state.generated_story)
-                st.session_state.copy_status = "COPIED"
-                st.success("Story copied to clipboard!")
-            except Exception as e:
-                st.error(f"Failed to copy to clipboard: {e}")
-
 if __name__ == "__main__":
     main()
